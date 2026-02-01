@@ -106,11 +106,6 @@ public class MokaApp {
         Display display = new Display();
         Shell shell = new Shell(display);
 
-//        shell.addListener(SWT.Close, event -> {
-//            LOG.info("Exit requested, shutting down...");
-//            event.doit = true;
-//        });
-
         shell.setText(config.title());
         shell.setSize(config.width(), config.height());
         shell.setFullScreen(config.fullscreen());
