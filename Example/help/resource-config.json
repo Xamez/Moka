@@ -1,0 +1,57 @@
+{
+  "resources":{
+  "includes":[{
+    "pattern":"\\QMETA-INF/microprofile-config.properties\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.quarkus.arc.ComponentsProvider\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.quarkus.arc.ResourceReferenceProvider\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.smallrye.mutiny.infrastructure.CallbackDecorator\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.smallrye.mutiny.infrastructure.ExecutorConfiguration\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.smallrye.mutiny.infrastructure.MultiInterceptor\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.smallrye.mutiny.infrastructure.UniInterceptor\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.vertx.core.spi.VerticleFactory\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/io.vertx.core.spi.VertxServiceProvider\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/java.lang.System$LoggerFinder\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/java.nio.channels.spi.SelectorProvider\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/java.nio.file.spi.FileSystemProvider\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/java.time.zone.ZoneRulesProvider\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.eclipse.microprofile.config.spi.ConfigProviderResolver\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.jboss.logmanager.ConfiguratorFactory\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.jboss.logmanager.LogContextInitializer\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.jboss.logmanager.MDCProvider\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.jboss.logmanager.NDCProvider\\E"
+  }, {
+    "pattern":"\\QMETA-INF/services/org.slf4j.spi.SLF4JServiceProvider\\E"
+  }, {
+    "pattern":"\\Qapplication.properties\\E"
+  }, {
+    "pattern":"\\Qorg/eclipse/swt/internal/Library.class\\E"
+  }, {
+    "pattern":"\\Qorg/jboss/threads/Version.properties\\E"
+  }, {
+    "pattern":"\\Qswt-osversion-win32-4971r15.dll\\E"
+  }, {
+    "pattern":"\\Qswt-win32-4971r15.dll\\E"
+  }, {
+    "pattern":"\\Qwebroot/index.html\\E"
+  }, {
+    "pattern":"\\Qwebroot\\E"
+  }]},
+  "bundles":[]
+}

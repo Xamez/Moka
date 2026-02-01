@@ -1,0 +1,61 @@
+plugins {
+    id 'java'
+    id 'java-library'
+    id 'io.quarkus'
+    id 'maven-publish'
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+def osName = System.getProperty("os.name").toLowerCase()
+def swtArtifactId = switch (osName) {
+    case { it.contains("win") } -> "org.eclipse.swt.win32.win32.x86_64"
+    case { it.contains("mac") } ->
+        System.getProperty("os.arch") == "aarch64"
+                ? "org.eclipse.swt.cocoa.macosx.aarch64"
+                : "org.eclipse.swt.cocoa.macosx.x86_64"
+    default -> "org.eclipse.swt.gtk.linux.x86_64"
+}
+
+dependencies {
+    api "org.eclipse.platform:${swtArtifactId}:${swtVersion}"
+    implementation platform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+    implementation 'io.quarkus:quarkus-vertx'
+    implementation 'io.quarkus:quarkus-vertx-http'
+    implementation 'io.quarkus:quarkus-jackson'
+    implementation 'io.quarkus:quarkus-arc'
+    compileOnly "org.graalvm.sdk:graal-sdk:25.0.2"
+    testImplementation 'io.quarkus:quarkus-junit5'
+}
+
+group = 'fr.xamez.moka'
+version = '1.0'
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+test {
+    systemProperty "java.util.logging.manager", "org.jboss.logmanager.LogManager"
+    jvmArgs "--add-opens", "java.base/java.lang=ALL-UNNAMED"
+}
+compileJava {
+    options.encoding = 'UTF-8'
+    options.compilerArgs << '-parameters'
+}
+
+compileTestJava {
+    options.encoding = 'UTF-8'
+}

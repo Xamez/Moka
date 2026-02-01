@@ -1,0 +1,50 @@
+plugins {
+    id 'java'
+    id 'io.quarkus'
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
+    implementation 'io.quarkus:quarkus-arc'
+    implementation 'io.quarkus:quarkus-vertx'
+    implementation 'fr.xamez.moka:moka:1.0'
+    testImplementation 'io.quarkus:quarkus-junit5'
+}
+
+group = 'app'
+version = '1.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+test {
+    systemProperty "java.util.logging.manager", "org.jboss.logmanager.LogManager"
+    jvmArgs "--add-opens", "java.base/java.lang=ALL-UNNAMED"
+}
+compileJava {
+    options.encoding = 'UTF-8'
+    options.compilerArgs << '-parameters'
+}
+
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
+def buildDirPath = project.findProperty('moka.frontend.dist') ?: 'dist'
+
+tasks.register('copyFrontend', Copy) {
+    group = 'build'
+    description = 'Copies the frontend build files to the resources directory.'
+
+    from buildDirPath
+    into layout.buildDirectory.dir("resources/main/META-INF/resources")
+}
+
+processResources.dependsOn copyFrontend

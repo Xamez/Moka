@@ -1,0 +1,1093 @@
+[
+{
+  "name":"FileSystemService"
+},
+{
+  "name":"Main",
+  "methods":[{"name":"main","parameterTypes":["java.lang.String[]"] }]
+},
+{
+  "name":"Main$App"
+},
+{
+  "name":"[Ljava.lang.String;"
+},
+{
+  "name":"com.fasterxml.jackson.core.ObjectCodec"
+},
+{
+  "name":"com.fasterxml.jackson.core.TreeCodec"
+},
+{
+  "name":"com.fasterxml.jackson.core.Versioned"
+},
+{
+  "name":"com.fasterxml.jackson.databind.ObjectMapper"
+},
+{
+  "name":"fr.xamez.moka.MokaApp",
+  "fields":[{"name":"config"}]
+},
+{
+  "name":"fr.xamez.moka.MokaAppConfig"
+},
+{
+  "name":"fr.xamez.moka.MokaAppConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.netty.bootstrap.ServerBootstrap$1"
+},
+{
+  "name":"io.netty.bootstrap.ServerBootstrap$ServerBootstrapAcceptor",
+  "methods":[{"name":"channelRead","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }, {"name":"exceptionCaught","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Throwable"] }]
+},
+{
+  "name":"io.netty.buffer.AbstractByteBufAllocator",
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"io.netty.buffer.AbstractReferenceCountedByteBuf",
+  "fields":[{"name":"refCnt"}]
+},
+{
+  "name":"io.netty.channel.AbstractChannelHandlerContext",
+  "fields":[{"name":"handlerState"}]
+},
+{
+  "name":"io.netty.channel.ChannelDuplexHandler",
+  "methods":[{"name":"bind","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.net.SocketAddress","io.netty.channel.ChannelPromise"] }, {"name":"close","parameterTypes":["io.netty.channel.ChannelHandlerContext","io.netty.channel.ChannelPromise"] }, {"name":"connect","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.net.SocketAddress","java.net.SocketAddress","io.netty.channel.ChannelPromise"] }, {"name":"deregister","parameterTypes":["io.netty.channel.ChannelHandlerContext","io.netty.channel.ChannelPromise"] }, {"name":"disconnect","parameterTypes":["io.netty.channel.ChannelHandlerContext","io.netty.channel.ChannelPromise"] }, {"name":"flush","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"read","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"write","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object","io.netty.channel.ChannelPromise"] }]
+},
+{
+  "name":"io.netty.channel.ChannelHandlerAdapter",
+  "methods":[{"name":"exceptionCaught","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Throwable"] }]
+},
+{
+  "name":"io.netty.channel.ChannelInboundHandlerAdapter",
+  "methods":[{"name":"channelActive","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelInactive","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelRead","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }, {"name":"channelReadComplete","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelRegistered","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelUnregistered","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelWritabilityChanged","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"exceptionCaught","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Throwable"] }, {"name":"userEventTriggered","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }]
+},
+{
+  "name":"io.netty.channel.ChannelInitializer",
+  "methods":[{"name":"channelRegistered","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"exceptionCaught","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Throwable"] }]
+},
+{
+  "name":"io.netty.channel.ChannelOutboundBuffer",
+  "fields":[{"name":"totalPendingSize"}, {"name":"unwritable"}]
+},
+{
+  "name":"io.netty.channel.ChannelOutboundHandlerAdapter",
+  "methods":[{"name":"bind","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.net.SocketAddress","io.netty.channel.ChannelPromise"] }, {"name":"close","parameterTypes":["io.netty.channel.ChannelHandlerContext","io.netty.channel.ChannelPromise"] }, {"name":"connect","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.net.SocketAddress","java.net.SocketAddress","io.netty.channel.ChannelPromise"] }, {"name":"deregister","parameterTypes":["io.netty.channel.ChannelHandlerContext","io.netty.channel.ChannelPromise"] }, {"name":"disconnect","parameterTypes":["io.netty.channel.ChannelHandlerContext","io.netty.channel.ChannelPromise"] }, {"name":"flush","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"read","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }]
+},
+{
+  "name":"io.netty.channel.DefaultChannelConfig",
+  "fields":[{"name":"autoRead"}, {"name":"writeBufferWaterMark"}]
+},
+{
+  "name":"io.netty.channel.DefaultChannelPipeline",
+  "fields":[{"name":"estimatorHandle"}]
+},
+{
+  "name":"io.netty.channel.DefaultChannelPipeline$HeadContext",
+  "methods":[{"name":"bind","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.net.SocketAddress","io.netty.channel.ChannelPromise"] }, {"name":"channelActive","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelInactive","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelRead","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }, {"name":"channelReadComplete","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelRegistered","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelUnregistered","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelWritabilityChanged","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"close","parameterTypes":["io.netty.channel.ChannelHandlerContext","io.netty.channel.ChannelPromise"] }, {"name":"connect","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.net.SocketAddress","java.net.SocketAddress","io.netty.channel.ChannelPromise"] }, {"name":"deregister","parameterTypes":["io.netty.channel.ChannelHandlerContext","io.netty.channel.ChannelPromise"] }, {"name":"disconnect","parameterTypes":["io.netty.channel.ChannelHandlerContext","io.netty.channel.ChannelPromise"] }, {"name":"exceptionCaught","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Throwable"] }, {"name":"flush","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"read","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"userEventTriggered","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }, {"name":"write","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object","io.netty.channel.ChannelPromise"] }]
+},
+{
+  "name":"io.netty.channel.DefaultChannelPipeline$TailContext",
+  "methods":[{"name":"channelActive","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelInactive","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelRead","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }, {"name":"channelReadComplete","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelRegistered","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelUnregistered","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelWritabilityChanged","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"exceptionCaught","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Throwable"] }, {"name":"userEventTriggered","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }]
+},
+{
+  "name":"io.netty.channel.EventLoopGroup"
+},
+{
+  "name":"io.netty.handler.codec.ByteToMessageDecoder",
+  "methods":[{"name":"channelInactive","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelRead","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }, {"name":"channelReadComplete","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }]
+},
+{
+  "name":"io.netty.handler.codec.haproxy.HAProxyMessageDecoder"
+},
+{
+  "name":"io.netty.handler.codec.http.HttpObjectDecoder",
+  "methods":[{"name":"userEventTriggered","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }]
+},
+{
+  "name":"io.netty.handler.codec.http.HttpObjectEncoder",
+  "methods":[{"name":"write","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object","io.netty.channel.ChannelPromise"] }]
+},
+{
+  "name":"io.netty.handler.timeout.IdleStateHandler",
+  "methods":[{"name":"channelActive","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelInactive","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelRead","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }, {"name":"channelReadComplete","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelRegistered","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"write","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object","io.netty.channel.ChannelPromise"] }]
+},
+{
+  "name":"io.netty.util.DefaultAttributeMap",
+  "fields":[{"name":"attributes"}]
+},
+{
+  "name":"io.netty.util.Recycler$DefaultHandle",
+  "fields":[{"name":"state"}]
+},
+{
+  "name":"io.netty.util.concurrent.DefaultPromise",
+  "fields":[{"name":"result"}]
+},
+{
+  "name":"io.netty.util.concurrent.SingleThreadEventExecutor",
+  "fields":[{"name":"state"}, {"name":"threadProperties"}]
+},
+{
+  "name":"io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueColdProducerFields",
+  "fields":[{"name":"producerLimit"}]
+},
+{
+  "name":"io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueConsumerFields",
+  "fields":[{"name":"consumerIndex"}]
+},
+{
+  "name":"io.netty.util.internal.shaded.org.jctools.queues.BaseMpscLinkedArrayQueueProducerFields",
+  "fields":[{"name":"producerIndex"}]
+},
+{
+  "name":"io.netty.util.internal.shaded.org.jctools.queues.unpadded.MpscUnpaddedArrayQueueConsumerIndexField",
+  "fields":[{"name":"consumerIndex"}]
+},
+{
+  "name":"io.netty.util.internal.shaded.org.jctools.queues.unpadded.MpscUnpaddedArrayQueueProducerIndexField",
+  "fields":[{"name":"producerIndex"}]
+},
+{
+  "name":"io.netty.util.internal.shaded.org.jctools.queues.unpadded.MpscUnpaddedArrayQueueProducerLimitField",
+  "fields":[{"name":"producerLimit"}]
+},
+{
+  "name":"io.quarkus.arc.AsyncObserverExceptionHandler"
+},
+{
+  "name":"io.quarkus.arc.generator.Default_jakarta_enterprise_context_ApplicationScoped_ContextInstances",
+  "fields":[{"name":"l0"}, {"name":"l1"}, {"name":"l2"}, {"name":"l3"}, {"name":"l4"}, {"name":"l5"}, {"name":"l6"}, {"name":"l7"}, {"name":"l8"}]
+},
+{
+  "name":"io.quarkus.arc.generator.Default_jakarta_enterprise_context_RequestScoped_ContextInstances",
+  "fields":[{"name":"l0"}, {"name":"l1"}, {"name":"l2"}]
+},
+{
+  "name":"io.quarkus.arc.impl.AbstractInstanceHandle",
+  "fields":[{"name":"destroyed"}]
+},
+{
+  "name":"io.quarkus.arc.impl.CurrentManagedContext$CurrentContextState",
+  "fields":[{"name":"state"}]
+},
+{
+  "name":"io.quarkus.arc.impl.DefaultAsyncObserverExceptionHandler"
+},
+{
+  "name":"io.quarkus.arc.runtime.ConfigStaticInitValues"
+},
+{
+  "name":"io.quarkus.jackson.ObjectMapperCustomizer"
+},
+{
+  "name":"io.quarkus.jackson.customizer.RegisterSerializersAndDeserializersCustomizer"
+},
+{
+  "name":"io.quarkus.jackson.runtime.ConfigurationCustomizer",
+  "fields":[{"name":"jacksonBuildTimeConfig"}]
+},
+{
+  "name":"io.quarkus.jackson.runtime.JacksonBuildTimeConfig"
+},
+{
+  "name":"io.quarkus.jackson.runtime.JacksonBuildTimeConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.jackson.runtime.JacksonSupport"
+},
+{
+  "name":"io.quarkus.jackson.runtime.ObjectMapperProducer"
+},
+{
+  "name":"io.quarkus.jackson.runtime.VertxHybridPoolObjectMapperCustomizer"
+},
+{
+  "name":"io.quarkus.registry.ValueRegistry"
+},
+{
+  "name":"io.quarkus.runner.ApplicationImpl",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.ApplicationConfig"
+},
+{
+  "name":"io.quarkus.runtime.ApplicationConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.BannerRuntimeConfig"
+},
+{
+  "name":"io.quarkus.runtime.BannerRuntimeConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.ConfigConfig"
+},
+{
+  "name":"io.quarkus.runtime.ConfigConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.LaunchConfig"
+},
+{
+  "name":"io.quarkus.runtime.LaunchConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.LiveReloadConfig"
+},
+{
+  "name":"io.quarkus.runtime.LiveReloadConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.LocalesBuildTimeConfig"
+},
+{
+  "name":"io.quarkus.runtime.LocalesBuildTimeConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.QuarkusApplication"
+},
+{
+  "name":"io.quarkus.runtime.StartupEvent"
+},
+{
+  "name":"io.quarkus.runtime.ThreadPoolConfig"
+},
+{
+  "name":"io.quarkus.runtime.ThreadPoolConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.configuration.CharsetConverter",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.configuration.InetSocketAddressConverter",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.configuration.MemorySize"
+},
+{
+  "name":"io.quarkus.runtime.configuration.MemorySizeConverter",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.configuration.NormalizeRootHttpPathConverter",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.configuration.TrimmedStringConverter",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.console.ConsoleRuntimeConfig"
+},
+{
+  "name":"io.quarkus.runtime.console.ConsoleRuntimeConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.generated.RunTimeConfig",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.generated.StaticInitConfig",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.init.InitRuntimeConfig"
+},
+{
+  "name":"io.quarkus.runtime.init.InitRuntimeConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.init.InitRuntimeConfig$BooleanConverter",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.logging.InheritableLevel",
+  "methods":[{"name":"of","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"io.quarkus.runtime.logging.LevelConverter",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.logging.LogBuildTimeConfig"
+},
+{
+  "name":"io.quarkus.runtime.logging.LogBuildTimeConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.logging.LogBuildTimeConfig$CategoryBuildTimeConfig"
+},
+{
+  "name":"io.quarkus.runtime.logging.LogBuildTimeConfig$CategoryBuildTimeConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.logging.LogRuntimeConfig"
+},
+{
+  "name":"io.quarkus.runtime.logging.LogRuntimeConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.logging.LogRuntimeConfig$AsyncConfig"
+},
+{
+  "name":"io.quarkus.runtime.logging.LogRuntimeConfig$AsyncConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.logging.LogRuntimeConfig$CategoryConfig"
+},
+{
+  "name":"io.quarkus.runtime.logging.LogRuntimeConfig$CategoryConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.logging.LogRuntimeConfig$CleanupFilterConfig"
+},
+{
+  "name":"io.quarkus.runtime.logging.LogRuntimeConfig$CleanupFilterConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.logging.LogRuntimeConfig$ConsoleConfig"
+},
+{
+  "name":"io.quarkus.runtime.logging.LogRuntimeConfig$ConsoleConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.logging.LogRuntimeConfig$FileConfig"
+},
+{
+  "name":"io.quarkus.runtime.logging.LogRuntimeConfig$FileConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.logging.LogRuntimeConfig$FileConfig$RotationConfig"
+},
+{
+  "name":"io.quarkus.runtime.logging.LogRuntimeConfig$FileConfig$RotationConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.logging.LogRuntimeConfig$SocketConfig"
+},
+{
+  "name":"io.quarkus.runtime.logging.LogRuntimeConfig$SocketConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.logging.LogRuntimeConfig$SyslogConfig"
+},
+{
+  "name":"io.quarkus.runtime.logging.LogRuntimeConfig$SyslogConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.runtime.shutdown.ShutdownConfig"
+},
+{
+  "name":"io.quarkus.runtime.shutdown.ShutdownConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.smallrye.context.runtime.SmallRyeContextPropagationProvider"
+},
+{
+  "name":"io.quarkus.tls.CertificateUpdatedEvent"
+},
+{
+  "name":"io.quarkus.tls.TlsConfigurationRegistry"
+},
+{
+  "name":"io.quarkus.tls.runtime.config.JKSKeyStoreConfig"
+},
+{
+  "name":"io.quarkus.tls.runtime.config.JKSKeyStoreConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.tls.runtime.config.JKSTrustStoreConfig"
+},
+{
+  "name":"io.quarkus.tls.runtime.config.JKSTrustStoreConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.tls.runtime.config.KeyStoreConfig"
+},
+{
+  "name":"io.quarkus.tls.runtime.config.KeyStoreConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.tls.runtime.config.KeyStoreCredentialProviderConfig"
+},
+{
+  "name":"io.quarkus.tls.runtime.config.KeyStoreCredentialProviderConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.tls.runtime.config.P12KeyStoreConfig"
+},
+{
+  "name":"io.quarkus.tls.runtime.config.P12KeyStoreConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.tls.runtime.config.P12TrustStoreConfig"
+},
+{
+  "name":"io.quarkus.tls.runtime.config.P12TrustStoreConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.tls.runtime.config.PemCertsConfig"
+},
+{
+  "name":"io.quarkus.tls.runtime.config.PemCertsConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.tls.runtime.config.PemKeyCertConfig"
+},
+{
+  "name":"io.quarkus.tls.runtime.config.PemKeyCertConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.tls.runtime.config.PemKeyCertConfig$KeyCertConfig"
+},
+{
+  "name":"io.quarkus.tls.runtime.config.PemKeyCertConfig$KeyCertConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.tls.runtime.config.TlsBucketConfig"
+},
+{
+  "name":"io.quarkus.tls.runtime.config.TlsBucketConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.tls.runtime.config.TlsConfig"
+},
+{
+  "name":"io.quarkus.tls.runtime.config.TlsConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.tls.runtime.config.TrustStoreConfig"
+},
+{
+  "name":"io.quarkus.tls.runtime.config.TrustStoreConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.tls.runtime.config.TrustStoreCredentialProviderConfig"
+},
+{
+  "name":"io.quarkus.tls.runtime.config.TrustStoreCredentialProviderConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.LocalEventBusCodec"
+},
+{
+  "name":"io.quarkus.vertx.core.runtime.VertxLogDelegateFactory",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.core.runtime.config.AddressResolverConfiguration"
+},
+{
+  "name":"io.quarkus.vertx.core.runtime.config.AddressResolverConfiguration$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.core.runtime.config.ClusterConfiguration"
+},
+{
+  "name":"io.quarkus.vertx.core.runtime.config.ClusterConfiguration$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.core.runtime.config.EventBusConfiguration"
+},
+{
+  "name":"io.quarkus.vertx.core.runtime.config.EventBusConfiguration$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.core.runtime.config.JksConfiguration"
+},
+{
+  "name":"io.quarkus.vertx.core.runtime.config.JksConfiguration$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.core.runtime.config.PemKeyCertConfiguration"
+},
+{
+  "name":"io.quarkus.vertx.core.runtime.config.PemKeyCertConfiguration$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.core.runtime.config.PemTrustCertConfiguration"
+},
+{
+  "name":"io.quarkus.vertx.core.runtime.config.PemTrustCertConfiguration$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.core.runtime.config.PfxConfiguration"
+},
+{
+  "name":"io.quarkus.vertx.core.runtime.config.PfxConfiguration$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.core.runtime.config.VertxConfiguration"
+},
+{
+  "name":"io.quarkus.vertx.core.runtime.config.VertxConfiguration$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.HttpServer"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.AccessLogConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.AccessLogConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.AuthConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.AuthConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.AuthRuntimeConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.AuthRuntimeConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.BodyConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.BodyConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.CertificateConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.CertificateConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.CurrentRequestProducer"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.CurrentVertxRequest"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.DefaultAuthConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.DefaultAuthConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.DefaultAuthConfig$Defaults"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.DefaultAuthConfig$Defaults$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.FilterConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.FilterConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.FormAuthConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.FormAuthConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.HeaderConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.HeaderConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.HttpCertificateUpdateEventListener"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.HttpStaticDirConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.HttpStaticDirConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.MultiPartConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.MultiPartConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.PolicyConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.PolicyConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.PolicyMappingConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.PolicyMappingConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.ProxyConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.ProxyConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.SameSiteCookieConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.SameSiteCookieConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.ServerLimitsConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.ServerLimitsConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.ServerSslConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.ServerSslConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.StaticResourcesConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.StaticResourcesConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.TrafficShapingConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.TrafficShapingConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.TrustedProxyCheck$TrustedProxyCheckPart"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.TrustedProxyCheckPartConverter",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.VertxHttpBuildTimeConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.VertxHttpBuildTimeConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.VertxHttpConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.VertxHttpConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.WebsocketServerConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.WebsocketServerConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.cors.CORSConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.cors.CORSConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.management.ManagementAuthConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.management.ManagementAuthConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.management.ManagementConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.management.ManagementConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.management.ManagementInterfaceBuildTimeConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.management.ManagementInterfaceBuildTimeConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.management.ManagementRuntimeAuthConfig"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.management.ManagementRuntimeAuthConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.security.BasicAuthenticationMechanism"
+},
+{
+  "name":"io.quarkus.vertx.http.runtime.security.HttpAuthenticationMechanism"
+},
+{
+  "name":"io.quarkus.vertx.runtime.VertxProducer"
+},
+{
+  "name":"io.quarkus.virtual.threads.VirtualThreadsConfig"
+},
+{
+  "name":"io.quarkus.virtual.threads.VirtualThreadsConfig$$CMImpl",
+  "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"io.smallrye.common.net.CidrAddress"
+},
+{
+  "name":"io.smallrye.config._private.ConfigLogging_$logger",
+  "methods":[{"name":"<init>","parameterTypes":["org.jboss.logging.Logger"] }]
+},
+{
+  "name":"io.smallrye.config._private.ConfigLogging_$logger_en"
+},
+{
+  "name":"io.smallrye.config._private.ConfigLogging_$logger_en_US"
+},
+{
+  "name":"io.smallrye.config._private.ConfigMessages_$bundle",
+  "fields":[{"name":"INSTANCE"}]
+},
+{
+  "name":"io.smallrye.config._private.ConfigMessages_$bundle_en"
+},
+{
+  "name":"io.smallrye.config._private.ConfigMessages_$bundle_en_US"
+},
+{
+  "name":"io.smallrye.context.SmallRyeManagedExecutor"
+},
+{
+  "name":"io.smallrye.context.SmallRyeThreadContext"
+},
+{
+  "name":"io.smallrye.mutiny.vertx.MutinyDelegate"
+},
+{
+  "name":"io.vertx.core.Vertx"
+},
+{
+  "name":"io.vertx.core.buffer.Buffer"
+},
+{
+  "name":"io.vertx.core.eventbus.EventBus"
+},
+{
+  "name":"io.vertx.core.eventbus.impl.EventBusImpl",
+  "fields":[{"name":"inboundInterceptors"}, {"name":"outboundInterceptors"}]
+},
+{
+  "name":"io.vertx.core.http.HttpServerRequest"
+},
+{
+  "name":"io.vertx.core.http.impl.Http1xOrH2CHandler",
+  "methods":[{"name":"channelRead","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }]
+},
+{
+  "name":"io.vertx.core.http.impl.Http1xUpgradeToH2CHandler",
+  "methods":[{"name":"channelRead","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }, {"name":"userEventTriggered","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }]
+},
+{
+  "name":"io.vertx.core.http.impl.HttpServerWorker$1",
+  "methods":[{"name":"exceptionCaught","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Throwable"] }, {"name":"userEventTriggered","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }]
+},
+{
+  "name":"io.vertx.core.http.impl.VertxHttpRequestDecoder"
+},
+{
+  "name":"io.vertx.core.http.impl.VertxHttpResponseEncoder"
+},
+{
+  "name":"io.vertx.core.metrics.Measured"
+},
+{
+  "name":"io.vertx.core.net.impl.ServerChannelLoadBalancer"
+},
+{
+  "name":"io.vertx.core.net.impl.VertxHandler",
+  "methods":[{"name":"channelInactive","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelRead","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }, {"name":"channelReadComplete","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelWritabilityChanged","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"close","parameterTypes":["io.netty.channel.ChannelHandlerContext","io.netty.channel.ChannelPromise"] }, {"name":"exceptionCaught","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Throwable"] }, {"name":"userEventTriggered","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }]
+},
+{
+  "name":"io.vertx.core.streams.ReadStream"
+},
+{
+  "name":"io.vertx.core.streams.StreamBase"
+},
+{
+  "name":"io.vertx.ext.web.Router"
+},
+{
+  "name":"io.vertx.ext.web.RoutingContext"
+},
+{
+  "name":"io.vertx.ext.web.impl.RoutingContextImplBase",
+  "fields":[{"name":"currentRouteNextFailureHandlerIndex"}, {"name":"currentRouteNextHandlerIndex"}]
+},
+{
+  "name":"io.vertx.mutiny.core.Vertx"
+},
+{
+  "name":"io.vertx.mutiny.core.eventbus.EventBus"
+},
+{
+  "name":"io.vertx.mutiny.core.metrics.Measured"
+},
+{
+  "name":"jakarta.enterprise.context.BeforeDestroyed",
+  "queryAllDeclaredMethods":true,
+  "methods":[{"name":"value","parameterTypes":[] }]
+},
+{
+  "name":"jakarta.enterprise.context.Destroyed",
+  "queryAllDeclaredMethods":true,
+  "methods":[{"name":"value","parameterTypes":[] }]
+},
+{
+  "name":"jakarta.enterprise.context.Initialized",
+  "queryAllDeclaredMethods":true,
+  "methods":[{"name":"value","parameterTypes":[] }]
+},
+{
+  "name":"jakarta.enterprise.inject.Any",
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"jakarta.enterprise.inject.Default",
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"jakarta.enterprise.inject.Instance"
+},
+{
+  "name":"jakarta.enterprise.inject.spi.InjectionPoint"
+},
+{
+  "name":"jakarta.inject.Inject",
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"java.lang.Boolean",
+  "methods":[{"name":"of","parameterTypes":["java.lang.CharSequence"] }, {"name":"of","parameterTypes":["java.lang.String"] }, {"name":"valueOf","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.lang.ClassLoader"
+},
+{
+  "name":"java.lang.Thread",
+  "fields":[{"name":"contextClassLoader"}, {"name":"threadLocalRandomProbe"}],
+  "methods":[{"name":"isVirtual","parameterTypes":[] }]
+},
+{
+  "name":"java.net.InetAddress"
+},
+{
+  "name":"java.net.InetSocketAddress"
+},
+{
+  "name":"java.nio.Bits",
+  "fields":[{"name":"MAX_MEMORY"}, {"name":"UNALIGNED"}]
+},
+{
+  "name":"java.nio.Buffer",
+  "fields":[{"name":"address"}]
+},
+{
+  "name":"java.nio.ByteBuffer",
+  "methods":[{"name":"alignedSlice","parameterTypes":["int"] }]
+},
+{
+  "name":"java.nio.DirectByteBuffer",
+  "methods":[{"name":"<init>","parameterTypes":["long","long"] }]
+},
+{
+  "name":"java.nio.channels.spi.SelectorProvider",
+  "methods":[{"name":"openServerSocketChannel","parameterTypes":["java.net.ProtocolFamily"] }, {"name":"openSocketChannel","parameterTypes":["java.net.ProtocolFamily"] }]
+},
+{
+  "name":"java.nio.charset.Charset"
+},
+{
+  "name":"java.nio.file.Path"
+},
+{
+  "name":"java.security.SecureRandomParameters"
+},
+{
+  "name":"java.time.Duration"
+},
+{
+  "name":"java.time.ZoneId"
+},
+{
+  "name":"java.util.Locale"
+},
+{
+  "name":"java.util.concurrent.ForkJoinTask",
+  "fields":[{"name":"aux"}, {"name":"status"}]
+},
+{
+  "name":"java.util.concurrent.atomic.AtomicBoolean",
+  "fields":[{"name":"value"}]
+},
+{
+  "name":"java.util.concurrent.atomic.AtomicReference",
+  "fields":[{"name":"value"}]
+},
+{
+  "name":"java.util.concurrent.atomic.Striped64",
+  "fields":[{"name":"base"}, {"name":"cellsBusy"}]
+},
+{
+  "name":"java.util.logging.Level"
+},
+{
+  "name":"java.util.regex.Pattern"
+},
+{
+  "name":"javax.net.ssl.SSLEngine",
+  "methods":[{"name":"getApplicationProtocol","parameterTypes":[] }]
+},
+{
+  "name":"jdk.internal.misc.Unsafe",
+  "methods":[{"name":"getUnsafe","parameterTypes":[] }]
+},
+{
+  "name":"org.eclipse.microprofile.context.ManagedExecutor"
+},
+{
+  "name":"org.eclipse.microprofile.context.ThreadContext"
+},
+{
+  "name":"org.eclipse.swt.browser.BrowserInitializer"
+},
+{
+  "name":"org.eclipse.swt.widgets.Display"
+},
+{
+  "name":"org.jboss.logmanager.CopyOnWriteMap",
+  "fields":[{"name":"map"}]
+},
+{
+  "name":"org.jboss.logmanager.ExtHandler",
+  "fields":[{"name":"handlers"}]
+},
+{
+  "name":"org.jboss.logmanager.ExtLogRecord",
+  "methods":[{"name":"setMarker","parameterTypes":["java.lang.Object"] }]
+},
+{
+  "name":"org.jboss.logmanager.LogManager"
+},
+{
+  "name":"org.jboss.logmanager.Logger$AttachmentKey"
+},
+{
+  "name":"org.jboss.logmanager.LoggerNode",
+  "fields":[{"name":"handlers"}]
+},
+{
+  "name":"org.jboss.logmanager.StandardOutputStreams"
+},
+{
+  "name":"sun.misc.Unsafe",
+  "fields":[{"name":"theUnsafe"}],
+  "methods":[{"name":"copyMemory","parameterTypes":["java.lang.Object","long","java.lang.Object","long","long"] }, {"name":"getAndAddLong","parameterTypes":["java.lang.Object","long","long"] }, {"name":"getAndSetObject","parameterTypes":["java.lang.Object","long","java.lang.Object"] }, {"name":"storeFence","parameterTypes":[] }]
+},
+{
+  "name":"sun.nio.ch.SelectorImpl",
+  "fields":[{"name":"publicSelectedKeys"}, {"name":"selectedKeys"}]
+},
+{
+  "name":"sun.security.provider.DRBG",
+  "methods":[{"name":"<init>","parameterTypes":["java.security.SecureRandomParameters"] }]
+},
+{
+  "name":"sun.security.provider.SHA",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.SHA2$SHA256",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.provider.X509Factory",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"sun.security.rsa.RSASignature$SHA256withRSA",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+}
+]
