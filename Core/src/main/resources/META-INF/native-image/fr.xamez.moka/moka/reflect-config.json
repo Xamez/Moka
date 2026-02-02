@@ -3,11 +3,35 @@
   "name":"FileSystemService"
 },
 {
+  "name":"FileUtils"
+},
+{
   "name":"Main",
   "methods":[{"name":"main","parameterTypes":["java.lang.String[]"] }]
 },
 {
   "name":"Main$App"
+},
+{
+  "name":"MenuConfig"
+},
+{
+  "name":"[Lcom.fasterxml.jackson.databind.deser.BeanDeserializerModifier;"
+},
+{
+  "name":"[Lcom.fasterxml.jackson.databind.deser.Deserializers;"
+},
+{
+  "name":"[Lcom.fasterxml.jackson.databind.deser.KeyDeserializers;"
+},
+{
+  "name":"[Lcom.fasterxml.jackson.databind.deser.ValueInstantiators;"
+},
+{
+  "name":"[Lcom.fasterxml.jackson.databind.ser.BeanSerializerModifier;"
+},
+{
+  "name":"[Lcom.fasterxml.jackson.databind.ser.Serializers;"
 },
 {
   "name":"[Ljava.lang.String;"
@@ -25,6 +49,10 @@
   "name":"com.fasterxml.jackson.databind.ObjectMapper"
 },
 {
+  "name":"com.fasterxml.jackson.databind.ext.Java7SupportImpl",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"fr.xamez.moka.MokaApp",
   "fields":[{"name":"config"}]
 },
@@ -34,6 +62,12 @@
 {
   "name":"fr.xamez.moka.MokaAppConfig$$CMImpl",
   "methods":[{"name":"<init>","parameterTypes":["io.smallrye.config.ConfigMappingContext"] }, {"name":"getProperties","parameterTypes":[] }, {"name":"getSecrets","parameterTypes":[] }]
+},
+{
+  "name":"fr.xamez.moka.SwtUtils"
+},
+{
+  "name":"fr.xamez.moka.tool.MokaMenuBar"
 },
 {
   "name":"io.netty.bootstrap.ServerBootstrap$1"
@@ -117,12 +151,20 @@
   "methods":[{"name":"channelActive","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelInactive","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelRead","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object"] }, {"name":"channelReadComplete","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"channelRegistered","parameterTypes":["io.netty.channel.ChannelHandlerContext"] }, {"name":"write","parameterTypes":["io.netty.channel.ChannelHandlerContext","java.lang.Object","io.netty.channel.ChannelPromise"] }]
 },
 {
+  "name":"io.netty.util.AbstractReferenceCounted",
+  "fields":[{"name":"refCnt"}]
+},
+{
   "name":"io.netty.util.DefaultAttributeMap",
   "fields":[{"name":"attributes"}]
 },
 {
   "name":"io.netty.util.Recycler$DefaultHandle",
   "fields":[{"name":"state"}]
+},
+{
+  "name":"io.netty.util.ReferenceCountUtil",
+  "queryAllDeclaredMethods":true
 },
 {
   "name":"io.netty.util.concurrent.DefaultPromise",
@@ -161,7 +203,7 @@
 },
 {
   "name":"io.quarkus.arc.generator.Default_jakarta_enterprise_context_ApplicationScoped_ContextInstances",
-  "fields":[{"name":"l0"}, {"name":"l1"}, {"name":"l2"}, {"name":"l3"}, {"name":"l4"}, {"name":"l5"}, {"name":"l6"}, {"name":"l7"}, {"name":"l8"}]
+  "fields":[{"name":"l0"}, {"name":"l1"}, {"name":"l10"}, {"name":"l11"}, {"name":"l12"}, {"name":"l2"}, {"name":"l3"}, {"name":"l4"}, {"name":"l5"}, {"name":"l6"}, {"name":"l7"}, {"name":"l8"}, {"name":"l9"}]
 },
 {
   "name":"io.quarkus.arc.generator.Default_jakarta_enterprise_context_RequestScoped_ContextInstances",
@@ -812,20 +854,20 @@
   "methods":[{"name":"<init>","parameterTypes":["org.jboss.logging.Logger"] }]
 },
 {
-  "name":"io.smallrye.config._private.ConfigLogging_$logger_en"
+  "name":"io.smallrye.config._private.ConfigLogging_$logger_fr"
 },
 {
-  "name":"io.smallrye.config._private.ConfigLogging_$logger_en_US"
+  "name":"io.smallrye.config._private.ConfigLogging_$logger_fr_FR"
 },
 {
   "name":"io.smallrye.config._private.ConfigMessages_$bundle",
   "fields":[{"name":"INSTANCE"}]
 },
 {
-  "name":"io.smallrye.config._private.ConfigMessages_$bundle_en"
+  "name":"io.smallrye.config._private.ConfigMessages_$bundle_fr"
 },
 {
-  "name":"io.smallrye.config._private.ConfigMessages_$bundle_en_US"
+  "name":"io.smallrye.config._private.ConfigMessages_$bundle_fr_FR"
 },
 {
   "name":"io.smallrye.context.SmallRyeManagedExecutor"
@@ -844,6 +886,10 @@
 },
 {
   "name":"io.vertx.core.eventbus.EventBus"
+},
+{
+  "name":"io.vertx.core.eventbus.impl.DeliveryContextBase",
+  "fields":[{"name":"interceptorIdx"}]
 },
 {
   "name":"io.vertx.core.eventbus.impl.EventBusImpl",
@@ -943,11 +989,15 @@
   "methods":[{"name":"of","parameterTypes":["java.lang.CharSequence"] }, {"name":"of","parameterTypes":["java.lang.String"] }, {"name":"valueOf","parameterTypes":["java.lang.String"] }]
 },
 {
+  "name":"java.lang.Class",
+  "methods":[{"name":"isRecord","parameterTypes":[] }]
+},
+{
   "name":"java.lang.ClassLoader"
 },
 {
   "name":"java.lang.Thread",
-  "fields":[{"name":"contextClassLoader"}, {"name":"threadLocalRandomProbe"}],
+  "fields":[{"name":"contextClassLoader"}, {"name":"inheritableThreadLocals"}, {"name":"threadLocalRandomProbe"}, {"name":"threadLocals"}],
   "methods":[{"name":"isVirtual","parameterTypes":[] }]
 },
 {
@@ -1009,6 +1059,10 @@
 {
   "name":"java.util.concurrent.atomic.Striped64",
   "fields":[{"name":"base"}, {"name":"cellsBusy"}]
+},
+{
+  "name":"java.util.concurrent.atomic.Striped64$Cell",
+  "fields":[{"name":"value"}]
 },
 {
   "name":"java.util.logging.Level"

@@ -24,12 +24,40 @@
   "fields":[{"name":"cbSize"}, {"name":"dwFlags"}, {"name":"hModule"}, {"name":"lpApplicationName"}, {"name":"lpAssemblyDirectory"}, {"name":"lpResourceName"}, {"name":"lpSource"}, {"name":"wLangId"}, {"name":"wProcessorArchitecture"}]
 },
 {
+  "name":"org.eclipse.swt.internal.win32.BITMAP",
+  "fields":[{"name":"bmBits"}, {"name":"bmBitsPixel"}, {"name":"bmHeight"}, {"name":"bmPlanes"}, {"name":"bmType"}, {"name":"bmWidth"}, {"name":"bmWidthBytes"}]
+},
+{
+  "name":"org.eclipse.swt.internal.win32.BITMAPINFOHEADER",
+  "fields":[{"name":"biBitCount"}, {"name":"biClrImportant"}, {"name":"biClrUsed"}, {"name":"biCompression"}, {"name":"biHeight"}, {"name":"biPlanes"}, {"name":"biSize"}, {"name":"biSizeImage"}, {"name":"biWidth"}, {"name":"biXPelsPerMeter"}, {"name":"biYPelsPerMeter"}]
+},
+{
+  "name":"org.eclipse.swt.internal.win32.DIBSECTION",
+  "fields":[{"name":"biBitCount"}, {"name":"biClrImportant"}, {"name":"biClrUsed"}, {"name":"biCompression"}, {"name":"biHeight"}, {"name":"biPlanes"}, {"name":"biSize"}, {"name":"biSizeImage"}, {"name":"biWidth"}, {"name":"biXPelsPerMeter"}, {"name":"biYPelsPerMeter"}, {"name":"dsBitfields0"}, {"name":"dsBitfields1"}, {"name":"dsBitfields2"}, {"name":"dsOffset"}, {"name":"dshSection"}]
+},
+{
+  "name":"org.eclipse.swt.internal.win32.ICONINFO",
+  "fields":[{"name":"fIcon"}, {"name":"hbmColor"}, {"name":"hbmMask"}, {"name":"xHotspot"}, {"name":"yHotspot"}]
+},
+{
   "name":"org.eclipse.swt.internal.win32.INITCOMMONCONTROLSEX",
   "fields":[{"name":"dwICC"}, {"name":"dwSize"}]
 },
 {
   "name":"org.eclipse.swt.internal.win32.LOGFONT",
   "fields":[{"name":"lfCharSet"}, {"name":"lfClipPrecision"}, {"name":"lfEscapement"}, {"name":"lfFaceName"}, {"name":"lfHeight"}, {"name":"lfItalic"}, {"name":"lfOrientation"}, {"name":"lfOutPrecision"}, {"name":"lfPitchAndFamily"}, {"name":"lfQuality"}, {"name":"lfStrikeOut"}, {"name":"lfUnderline"}, {"name":"lfWeight"}, {"name":"lfWidth"}]
+},
+{
+  "name":"org.eclipse.swt.internal.win32.MENUBARINFO",
+  "fields":[{"name":"bottom"}, {"name":"cbSize"}, {"name":"fBarFocused"}, {"name":"fFocused"}, {"name":"hMenu"}, {"name":"hwndMenu"}, {"name":"left"}, {"name":"right"}, {"name":"top"}]
+},
+{
+  "name":"org.eclipse.swt.internal.win32.MENUINFO",
+  "fields":[{"name":"cbSize"}, {"name":"cyMax"}, {"name":"dwContextHelpID"}, {"name":"dwMenuData"}, {"name":"dwStyle"}, {"name":"fMask"}, {"name":"hbrBack"}]
+},
+{
+  "name":"org.eclipse.swt.internal.win32.MENUITEMINFO",
+  "fields":[{"name":"cbSize"}, {"name":"cch"}, {"name":"dwItemData"}, {"name":"dwTypeData"}, {"name":"fMask"}, {"name":"fState"}, {"name":"fType"}, {"name":"hSubMenu"}, {"name":"hbmpChecked"}, {"name":"hbmpItem"}, {"name":"hbmpUnchecked"}, {"name":"wID"}]
 },
 {
   "name":"org.eclipse.swt.internal.win32.MONITORINFO",

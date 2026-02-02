@@ -23,7 +23,11 @@ import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.*;
 import org.jboss.logging.Logger;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.file.Path;
+import java.util.Date;
 
 @ApplicationScoped
 public class MokaApp {
@@ -168,10 +172,21 @@ public class MokaApp {
 
             shell.open();
             runEventLoop(display, shell);
-        } catch (Exception e) {
-            LOG.error("WebView error", e);
+        } catch (Throwable t) {
+            LOG.error("Fatal error occurred in Moka application", t);
+            writeFatalError(t);
         } finally {
             shutdown(display);
+        }
+    }
+
+    private void writeFatalError(Throwable t) {
+        try (FileWriter fw = new FileWriter("moka-error.log", true);
+             PrintWriter pw = new PrintWriter(fw)) {
+            pw.println("--- CRASH REPORT " + new Date() + " ---");
+            t.printStackTrace(pw);
+            pw.println("----------------------------------------");
+        } catch (IOException ignored) {
         }
     }
 

@@ -5,8 +5,8 @@
 # Check https://quarkus.io/guides/quarkus-runtime-base-image for further information about this image.
 #
 # Before building the container image run:
-#
-# ./gradlew build -Dquarkus.native.enabled=true
+# cd C:\Users\Max\Projects\Moka\Example
+# gradlew build -Dquarkus.native.enabled=true -Dquarkus.package.jar.enabled=false
 #
 # Then, build the image with:
 #
