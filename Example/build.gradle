@@ -28,6 +28,7 @@ test {
     systemProperty "java.util.logging.manager", "org.jboss.logmanager.LogManager"
     jvmArgs "--add-opens", "java.base/java.lang=ALL-UNNAMED"
 }
+
 compileJava {
     options.encoding = 'UTF-8'
     options.compilerArgs << '-parameters'
@@ -38,6 +39,7 @@ compileTestJava {
 }
 
 def buildDirPath = project.findProperty('moka.frontend.dist') ?: 'dist'
+println "Using frontend build directory: ${buildDirPath}"
 
 tasks.register('copyFrontend', Copy) {
     group = 'build'

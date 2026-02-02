@@ -23,7 +23,23 @@ public interface MokaAppConfig {
     @WithDefault("true")
     boolean setActive();
 
+    @WithDefault("/moka.ico")
+    String iconUrl();
+
+    @WithDefault("true")
+    boolean center();
+
+    @WithDefault("true")
+    boolean resizable();
+
+    @WithDefault("false")
+    boolean maximized();
+
+    @WithDefault("true")
+    boolean enableBrowserCache();
+
     Optional<String> devUrl();
 
     Optional<String> staticPath();
+
 }

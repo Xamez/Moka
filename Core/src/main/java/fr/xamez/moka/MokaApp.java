@@ -1,5 +1,6 @@
 package fr.xamez.moka;
 
+import fr.xamez.moka.tool.MokaMenuBar;
 import io.quarkus.runtime.Quarkus;
 import io.quarkus.runtime.StartupEvent;
 import io.vertx.core.Vertx;
@@ -10,21 +11,19 @@ import io.vertx.ext.web.handler.FileSystemAccess;
 import io.vertx.ext.web.handler.StaticHandler;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.event.Observes;
+import jakarta.enterprise.inject.Instance;
 import jakarta.inject.Inject;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.browser.Browser;
 import org.eclipse.swt.browser.ProgressAdapter;
 import org.eclipse.swt.browser.ProgressEvent;
-import org.eclipse.swt.internal.Library;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.layout.FillLayout;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.*;
 import org.jboss.logging.Logger;
 
-import java.io.InputStream;
-import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
 
 @ApplicationScoped
 public class MokaApp {
@@ -35,13 +34,25 @@ public class MokaApp {
     MokaAppConfig config;
 
     @Inject
+    SwtUtils swtUtils;
+
+    @Inject
     Vertx vertx;
 
     @Inject
     Router router;
 
+    @Inject
+    Instance<MokaMenuBar> menuBarInstance;
+
+    private Shell shell;
+
+    public Shell getShell() {
+        return shell;
+    }
+
     void onStart(@Observes StartupEvent ev) {
-        loadNativeLibrary();
+        swtUtils.loadNativeLibrary();
         setupBridge();
         setupStaticServing();
     }
@@ -75,20 +86,66 @@ public class MokaApp {
     private void setupStaticServing() {
         if (config.devUrl().isPresent()) return;
 
+        StaticHandler staticHandler;
         if (config.staticPath().isEmpty()) {
-            router.route("/*").handler(StaticHandler.create());
+            staticHandler = StaticHandler.create();
         } else {
             String absPath = Path.of(config.staticPath().get()).toAbsolutePath().toString();
-            router.route("/*").handler(StaticHandler.create(FileSystemAccess.ROOT, absPath));
+            staticHandler = StaticHandler.create(FileSystemAccess.ROOT, absPath);
         }
+        staticHandler.setCachingEnabled(config.enableBrowserCache());
+        router.route("/*").handler(staticHandler);
 
         router.route().last().handler(ctx -> {
-            if (!ctx.response().ended() && ctx.request().getHeader("Accept").contains("text/html")) {
+            boolean isNotRoot = !"/".equals(ctx.normalizedPath());
+            String header = ctx.request().getHeader("Accept");
+            if (header == null) header = "";
+            boolean isHtmlRequest = header.contains("text/html");
+            boolean responseNotEnded = !ctx.response().ended();
+
+            if (responseNotEnded && isHtmlRequest && isNotRoot) {
                 ctx.reroute("/");
             } else {
                 ctx.next();
             }
         });
+    }
+
+    private void setupMenu(Shell shell) {
+        if (menuBarInstance.isUnsatisfied()) {
+            return;
+        }
+        MokaMenuBar mokaMenuBar = menuBarInstance.get();
+        Menu bar = new Menu(shell, SWT.BAR);
+        shell.setMenuBar(bar);
+
+        for (MokaMenuBar.Menu mokaMenu : mokaMenuBar.getMenus()) {
+            MenuItem header = new MenuItem(bar, SWT.CASCADE);
+            header.setText(mokaMenu.getLabel());
+
+            Menu subMenu = new Menu(shell, SWT.DROP_DOWN);
+            header.setMenu(subMenu);
+
+            fillMenu(subMenu, mokaMenu);
+        }
+    }
+
+    private void fillMenu(Menu swtMenu, MokaMenuBar.Menu mokaMenu) {
+        for (MokaMenuBar.Item item : mokaMenu.getItems()) {
+            if (item instanceof MokaMenuBar.Action(String label, Runnable callback)) {
+                MenuItem mi = new MenuItem(swtMenu, SWT.PUSH);
+                mi.setText(label);
+                mi.addListener(SWT.Selection, e -> callback.run());
+            } else if (item instanceof MokaMenuBar.Separator) {
+                new MenuItem(swtMenu, SWT.SEPARATOR);
+            } else if (item instanceof MokaMenuBar.Menu sub) {
+                MenuItem mi = new MenuItem(swtMenu, SWT.CASCADE);
+                mi.setText(sub.getLabel());
+                Menu subSub = new Menu(swtMenu);
+                mi.setMenu(subSub);
+                fillMenu(subSub, sub);
+            }
+        }
     }
 
     private static final String JS_INJECTION = """
@@ -104,84 +161,96 @@ public class MokaApp {
 
     public void run() {
         Display display = new Display();
-        Shell shell = new Shell(display);
-
-        shell.setText(config.title());
-        shell.setSize(config.width(), config.height());
-        shell.setFullScreen(config.fullscreen());
-        if (config.setActive()) shell.getDisplay().asyncExec(shell::forceActive);
-        shell.setLayout(new FillLayout());
-
         try {
-            Browser browser = new Browser(shell, SWT.EDGE);
-            new MokaBridge(browser, vertx.eventBus());
+            Shell shell = createAndConfigureShell(display);
+            setupMenu(shell);
+            setupBrowser(shell);
 
-            browser.addProgressListener(new ProgressAdapter() {
-                @Override
-                public void completed(ProgressEvent event) {
-                    browser.execute(JS_INJECTION);
-                }
-            });
-
-            String port = System.getProperty("quarkus.http.port", "8080");
-            String targetUrl = config.devUrl().orElse("http://localhost:" + port);
-            LOG.infof("Loading front: %s", targetUrl);
-
-            browser.setUrl(targetUrl);
             shell.open();
-
-            while (!shell.isDisposed()) {
-                if (!display.readAndDispatch()) display.sleep();
-            }
-
-            LOG.info("Event loop exited, initiating shutdown...");
-
+            runEventLoop(display, shell);
         } catch (Exception e) {
             LOG.error("WebView error", e);
         } finally {
-            if (!display.isDisposed()) {
-                display.dispose();
-            }
-            LOG.info("Application exited.");
-            Quarkus.asyncExit();
+            shutdown(display);
         }
     }
 
-    private void loadNativeLibrary() {
-        try {
-            String fileName = getSwtFileName();
+    private Shell createAndConfigureShell(Display display) {
+        int style = SWT.TITLE | SWT.MIN | SWT.CLOSE;
+        if (config.resizable()) style |= SWT.RESIZE | SWT.MAX;
 
-            Path tempDir = Files.createTempDirectory("moka-native");
-            tempDir.toFile().deleteOnExit();
-            Path targetPath = tempDir.resolve(fileName);
+        Shell shell = new Shell(display, style);
+        this.shell = shell;
+        shell.setText(config.title());
+        shell.setSize(config.width(), config.height());
+        shell.setFullScreen(config.fullscreen());
+        shell.setMaximized(config.maximized());
 
-            try (InputStream is = MokaApp.class.getResourceAsStream("/" + fileName)) {
-                if (is == null) {
-                    throw new IllegalStateException("SWT native library not found in classpath: " + fileName);
-                }
-                Files.copy(is, targetPath, StandardCopyOption.REPLACE_EXISTING);
-            }
-
-            System.setProperty("swt.library.path", tempDir.toAbsolutePath().toString());
-
-        } catch (Exception e) {
-            throw new RuntimeException("Failed to initialize native SWT library", e);
+        if (config.center()) {
+            centerShell(display, shell);
         }
+
+        if (config.setActive()) {
+            shell.getDisplay().asyncExec(shell::forceActive);
+        }
+
+        shell.setLayout(new FillLayout());
+        setupIcon(display, shell);
+
+        return shell;
     }
 
-    private String getSwtFileName() {
-        String os = System.getProperty("os.name").toLowerCase();
-        String arch = System.getProperty("os.arch").toLowerCase();
-        String version = Library.getVersionString();
+    private void centerShell(Display display, Shell shell) {
+        Monitor primary = display.getPrimaryMonitor();
+        Rectangle bounds = primary.getBounds();
+        Rectangle rect = shell.getBounds();
+        int x = bounds.x + (bounds.width - rect.width) / 2;
+        int y = bounds.y + (bounds.height - rect.height) / 2;
+        shell.setLocation(x, y);
+    }
 
-        if (os.contains("win")) {
-            return "swt-win32-" + version + ".dll";
-        } else if (os.contains("mac")) {
-            String macArch = (arch.contains("aarch64") || arch.contains("arm")) ? "aarch64" : "x86_64";
-            return "libswt-cocoa-macosx-" + macArch + "-" + version + ".dylib";
+    private void setupIcon(Display display, Shell shell) {
+        var iconStream = MokaApp.class.getResourceAsStream(config.iconUrl());
+        if (iconStream != null) {
+            Image image = new Image(display, iconStream);
+            shell.setImage(image);
         } else {
-            String linuxArch = arch.equals("amd64") ? "x86_64" : arch;
-            return "libswt-gtk-linux-" + linuxArch + "-" + version + ".so";
+            LOG.warnv("Icon resource not found: {0}", config.iconUrl());
         }
+    }
+
+    private void setupBrowser(Shell shell) {
+        Browser.clearSessions();
+        Browser browser = new Browser(shell, SWT.EDGE);
+        new MokaBridge(browser, vertx.eventBus());
+
+        browser.addProgressListener(new ProgressAdapter() {
+            @Override
+            public void completed(ProgressEvent event) {
+                browser.execute(JS_INJECTION);
+            }
+        });
+
+        String port = System.getProperty("quarkus.http.port", "8080");
+        String targetUrl = config.devUrl().orElse("http://localhost:" + port);
+        LOG.infof("Loading front: %s", targetUrl);
+
+        browser.setUrl(targetUrl);
+    }
+
+    private void runEventLoop(Display display, Shell shell) {
+        while (!shell.isDisposed()) {
+            if (!display.readAndDispatch()) display.sleep();
+        }
+        LOG.info("Event loop exited, initiating shutdown...");
+    }
+
+    private void shutdown(Display display) {
+        if (!display.isDisposed()) {
+            display.dispose();
+        }
+        LOG.info("Application exited.");
+        Quarkus.asyncExit();
+        System.exit(0);
     }
 }
