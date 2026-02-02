@@ -28,6 +28,7 @@ dependencies {
     implementation 'io.quarkus:quarkus-jackson'
     implementation 'io.quarkus:quarkus-arc'
     compileOnly "org.graalvm.sdk:graal-sdk:25.0.2"
+
     testImplementation 'io.quarkus:quarkus-junit5'
 }
 

@@ -14,20 +14,15 @@ import jakarta.enterprise.event.Observes;
 import jakarta.enterprise.inject.Instance;
 import jakarta.inject.Inject;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.browser.Browser;
-import org.eclipse.swt.browser.ProgressAdapter;
-import org.eclipse.swt.browser.ProgressEvent;
+import org.eclipse.swt.browser.*;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.program.Program;
 import org.eclipse.swt.widgets.*;
 import org.jboss.logging.Logger;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.nio.file.Path;
-import java.util.Date;
 
 @ApplicationScoped
 public class MokaApp {
@@ -174,21 +169,11 @@ public class MokaApp {
             runEventLoop(display, shell);
         } catch (Throwable t) {
             LOG.error("Fatal error occurred in Moka application", t);
-            writeFatalError(t);
         } finally {
             shutdown(display);
         }
     }
 
-    private void writeFatalError(Throwable t) {
-        try (FileWriter fw = new FileWriter("moka-error.log", true);
-             PrintWriter pw = new PrintWriter(fw)) {
-            pw.println("--- CRASH REPORT " + new Date() + " ---");
-            t.printStackTrace(pw);
-            pw.println("----------------------------------------");
-        } catch (IOException ignored) {
-        }
-    }
 
     private Shell createAndConfigureShell(Display display) {
         int style;
@@ -243,9 +228,39 @@ public class MokaApp {
     }
 
     private void setupBrowser(Shell shell) {
-        Browser.clearSessions();
         Browser browser = new Browser(shell, SWT.EDGE);
         new MokaBridge(browser, vertx.eventBus());
+
+        registerBrowserEvents(browser);
+
+        String port = System.getProperty("quarkus.http.port", "8080");
+        String targetUrl = config.devUrl().orElse("http://localhost:" + port);
+        LOG.infof("Loading front: %s", targetUrl);
+
+        browser.setUrl(targetUrl);
+    }
+
+    private void registerBrowserEvents(Browser browser) {
+        browser.addOpenWindowListener(event -> event.required = true);
+
+        browser.addLocationListener(new LocationAdapter() {
+            @Override
+            public void changing(LocationEvent event) {
+                String url = event.location;
+
+                if (url == null || url.isEmpty() || url.equals("about:blank")) {
+                    return;
+                }
+
+                String port = System.getProperty("quarkus.http.port", "8080");
+                String localBase = config.devUrl().orElse("http://localhost:" + port);
+
+                if (!url.startsWith(localBase)) {
+                    event.doit = false;
+                    Program.launch(url);
+                }
+            }
+        });
 
         browser.addProgressListener(new ProgressAdapter() {
             @Override
@@ -253,12 +268,6 @@ public class MokaApp {
                 browser.execute(JS_INJECTION);
             }
         });
-
-        String port = System.getProperty("quarkus.http.port", "8080");
-        String targetUrl = config.devUrl().orElse("http://localhost:" + port);
-        LOG.infof("Loading front: %s", targetUrl);
-
-        browser.setUrl(targetUrl);
     }
 
     private void runEventLoop(Display display, Shell shell) {

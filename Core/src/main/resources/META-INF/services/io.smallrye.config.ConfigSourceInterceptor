@@ -1,1 +1,2 @@
-fr.xamez.moka.build.WindowsTerminalInterceptor
+fr.xamez.moka.config.WindowsNativeBuildInterceptor
+fr.xamez.moka.config.LogConfigurationInterceptor

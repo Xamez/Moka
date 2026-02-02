@@ -8,6 +8,9 @@ import java.util.Optional;
 @ConfigMapping(prefix = "moka.app")
 public interface MokaAppConfig {
 
+    @WithDefault("Moka App")
+    String name();
+
     @WithDefault("Moka Application")
     String title();
 
@@ -37,6 +40,11 @@ public interface MokaAppConfig {
 
     @WithDefault("false")
     boolean maximized();
+
+    @WithDefault("true")
+    boolean enableLogFile();
+
+    Optional<String> logFilePath();
 
     @WithDefault("true")
     boolean enableBrowserCache();

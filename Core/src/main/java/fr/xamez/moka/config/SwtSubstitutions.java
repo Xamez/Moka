@@ -1,4 +1,4 @@
-package fr.xamez.moka.build;
+package fr.xamez.moka.config;
 
 import com.oracle.svm.core.annotate.Substitute;
 import com.oracle.svm.core.annotate.TargetClass;
