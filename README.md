@@ -9,6 +9,7 @@ It leverages Java for the backend and SWT for rendering the frontend.
 
 - [x] Fix render pages on native builds (``java.lang.NoClassDefFoundError: Could not initialize class io.vertx.core.buffer.impl.VertxByteBufAllocator``)
 - [x] Fix Vert.x event loop blocking for a built app using jvm
-- [ ] Cleanup `jni-config.json` and `reflect-config.json` files
+- [x] Cleanup `jni-config.json` and `reflect-config.json` files
+- [x] Add logging
 - [ ] Test on MacOS and Linux
 - [ ] Add documentation
