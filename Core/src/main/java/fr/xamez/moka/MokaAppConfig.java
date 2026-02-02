@@ -32,6 +32,9 @@ public interface MokaAppConfig {
     @WithDefault("true")
     boolean resizable();
 
+    @WithDefault("true")
+    boolean decorated();
+
     @WithDefault("false")
     boolean maximized();
 

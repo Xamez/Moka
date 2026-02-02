@@ -191,8 +191,16 @@ public class MokaApp {
     }
 
     private Shell createAndConfigureShell(Display display) {
-        int style = SWT.TITLE | SWT.MIN | SWT.CLOSE;
-        if (config.resizable()) style |= SWT.RESIZE | SWT.MAX;
+        int style;
+
+        if (config.decorated()) {
+            style = SWT.TITLE | SWT.MIN | SWT.CLOSE;
+            if (config.resizable()) {
+                style |= SWT.RESIZE | SWT.MAX;
+            }
+        } else {
+            style = SWT.NO_TRIM;
+        }
 
         Shell shell = new Shell(display, style);
         this.shell = shell;
