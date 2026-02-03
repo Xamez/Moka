@@ -4,6 +4,7 @@ Moka is a tauri-like framework for building desktop applications using modern we
 It leverages Java for the backend and SWT for rendering the frontend.
 
 > ~60Mb in native build size (for a 1Mb build size web app)
+> ~120Mb of memory consumption in native build
 
 ## TODO
 
