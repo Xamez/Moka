@@ -11,5 +11,7 @@ It leverages Java for the backend and SWT for rendering the frontend.
 - [x] Fix Vert.x event loop blocking for a built app using jvm
 - [x] Cleanup `jni-config.json` and `reflect-config.json` files
 - [x] Add logging
-- [ ] Test on MacOS and Linux
+- [x] Add support for native notifications
+- [ ] Add support for system tray
+- [ ] Test on MacOS and Linux (should not work since jni-config only has windows libs for now)
 - [ ] Add documentation
