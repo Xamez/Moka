@@ -11,6 +11,9 @@ public interface MokaAppConfig {
     @WithDefault("Moka App")
     String name();
 
+    @WithDefault("1.0.0")
+    String version();
+
     @WithDefault("Moka Application")
     String title();
 
@@ -52,5 +55,4 @@ public interface MokaAppConfig {
     Optional<String> devUrl();
 
     Optional<String> staticPath();
-
 }

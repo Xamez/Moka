@@ -72,6 +72,10 @@
   "fields":[{"name":"cbSize"}, {"name":"iBorderWidth"}, {"name":"iCaptionHeight"}, {"name":"iCaptionWidth"}, {"name":"iMenuHeight"}, {"name":"iMenuWidth"}, {"name":"iScrollHeight"}, {"name":"iScrollWidth"}, {"name":"iSmCaptionHeight"}, {"name":"iSmCaptionWidth"}, {"name":"lfCaptionFont"}, {"name":"lfMenuFont"}, {"name":"lfMessageFont"}, {"name":"lfSmCaptionFont"}, {"name":"lfStatusFont"}]
 },
 {
+  "name":"org.eclipse.swt.internal.win32.NOTIFYICONDATA",
+  "fields":[{"name":"cbSize"}, {"name":"dwInfoFlags"}, {"name":"dwState"}, {"name":"dwStateMask"}, {"name":"hIcon"}, {"name":"hWnd"}, {"name":"szInfo"}, {"name":"szInfoTitle"}, {"name":"szTip"}, {"name":"uCallbackMessage"}, {"name":"uFlags"}, {"name":"uID"}, {"name":"uVersion"}]
+},
+{
   "name":"org.eclipse.swt.internal.win32.PAINTSTRUCT",
   "fields":[{"name":"bottom"}, {"name":"fErase"}, {"name":"fIncUpdate"}, {"name":"fRestore"}, {"name":"hdc"}, {"name":"left"}, {"name":"rgbReserved"}, {"name":"right"}, {"name":"top"}]
 },
@@ -86,6 +90,10 @@
 {
   "name":"org.eclipse.swt.internal.win32.STARTUPINFO",
   "fields":[{"name":"cb"}, {"name":"cbReserved2"}, {"name":"dwFillAttribute"}, {"name":"dwFlags"}, {"name":"dwX"}, {"name":"dwXCountChars"}, {"name":"dwXSize"}, {"name":"dwY"}, {"name":"dwYCountChars"}, {"name":"dwYSize"}, {"name":"hStdError"}, {"name":"hStdInput"}, {"name":"hStdOutput"}, {"name":"lpDesktop"}, {"name":"lpReserved"}, {"name":"lpReserved2"}, {"name":"lpTitle"}, {"name":"wShowWindow"}]
+},
+{
+  "name":"org.eclipse.swt.internal.win32.TOOLINFO",
+  "fields":[{"name":"bottom"}, {"name":"cbSize"}, {"name":"hinst"}, {"name":"hwnd"}, {"name":"lParam"}, {"name":"left"}, {"name":"lpReserved"}, {"name":"lpszText"}, {"name":"right"}, {"name":"top"}, {"name":"uFlags"}, {"name":"uId"}]
 },
 {
   "name":"org.eclipse.swt.internal.win32.WINDOWPOS",
