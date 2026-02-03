@@ -88,12 +88,20 @@
   "fields":[{"name":"bottom"}, {"name":"left"}, {"name":"right"}, {"name":"top"}]
 },
 {
+  "name":"org.eclipse.swt.internal.win32.SHELLEXECUTEINFO",
+  "fields":[{"name":"cbSize"}, {"name":"dwHotKey"}, {"name":"fMask"}, {"name":"hIcon"}, {"name":"hInstApp"}, {"name":"hProcess"}, {"name":"hkeyClass"}, {"name":"hwnd"}, {"name":"lpClass"}, {"name":"lpDirectory"}, {"name":"lpFile"}, {"name":"lpIDList"}, {"name":"lpParameters"}, {"name":"lpVerb"}, {"name":"nShow"}]
+},
+{
   "name":"org.eclipse.swt.internal.win32.STARTUPINFO",
   "fields":[{"name":"cb"}, {"name":"cbReserved2"}, {"name":"dwFillAttribute"}, {"name":"dwFlags"}, {"name":"dwX"}, {"name":"dwXCountChars"}, {"name":"dwXSize"}, {"name":"dwY"}, {"name":"dwYCountChars"}, {"name":"dwYSize"}, {"name":"hStdError"}, {"name":"hStdInput"}, {"name":"hStdOutput"}, {"name":"lpDesktop"}, {"name":"lpReserved"}, {"name":"lpReserved2"}, {"name":"lpTitle"}, {"name":"wShowWindow"}]
 },
 {
   "name":"org.eclipse.swt.internal.win32.TOOLINFO",
   "fields":[{"name":"bottom"}, {"name":"cbSize"}, {"name":"hinst"}, {"name":"hwnd"}, {"name":"lParam"}, {"name":"left"}, {"name":"lpReserved"}, {"name":"lpszText"}, {"name":"right"}, {"name":"top"}, {"name":"uFlags"}, {"name":"uId"}]
+},
+{
+  "name":"org.eclipse.swt.internal.win32.WINDOWPLACEMENT",
+  "fields":[{"name":"bottom"}, {"name":"flags"}, {"name":"left"}, {"name":"length"}, {"name":"ptMaxPosition_x"}, {"name":"ptMaxPosition_y"}, {"name":"ptMinPosition_x"}, {"name":"ptMinPosition_y"}, {"name":"right"}, {"name":"showCmd"}, {"name":"top"}]
 },
 {
   "name":"org.eclipse.swt.internal.win32.WINDOWPOS",
