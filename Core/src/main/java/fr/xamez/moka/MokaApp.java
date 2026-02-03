@@ -228,7 +228,7 @@ public class MokaApp {
     }
 
     private void setupBrowser(Shell shell) {
-        Browser browser = new Browser(shell, SWT.EDGE);
+        Browser browser = new Browser(shell, SWT.NONE);
         new MokaBridge(browser, vertx.eventBus());
 
         registerBrowserEvents(browser);
@@ -241,25 +241,21 @@ public class MokaApp {
     }
 
     private void registerBrowserEvents(Browser browser) {
-        browser.addOpenWindowListener(event -> event.required = true);
+        browser.addOpenWindowListener(event -> {
+            Shell newShell = new Shell(Display.getDefault());
+            newShell.setLayout(new FillLayout());
+            Browser newBrowser = new Browser(newShell, SWT.NONE);
 
-        browser.addLocationListener(new LocationAdapter() {
-            @Override
-            public void changing(LocationEvent event) {
-                String url = event.location;
-
-                if (url == null || url.isEmpty() || url.equals("about:blank")) {
-                    return;
+            event.browser = newBrowser;
+            newBrowser.addLocationListener(new LocationAdapter() {
+                @Override
+                public void changing(LocationEvent locationEvent) {
+                    LOG.info("Opening external link: " + locationEvent.location);
+                    Program.launch(locationEvent.location);
+                    locationEvent.doit = false;
+                    newShell.dispose();
                 }
-
-                String port = System.getProperty("quarkus.http.port", "8080");
-                String localBase = config.devUrl().orElse("http://localhost:" + port);
-
-                if (!url.startsWith(localBase)) {
-                    event.doit = false;
-                    Program.launch(url);
-                }
-            }
+            });
         });
 
         browser.addProgressListener(new ProgressAdapter() {
